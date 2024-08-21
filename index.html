@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajvin Erugu - Cybersecurity Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom Animation Styles */
+        .hover-bounce:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .hover-grow:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .btn-animated {
+            background: #3490dc; /* Updated button background color */
+            border: none;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.4s ease, transform 0.4s ease;
+            perspective: 1000px;
+        }
+
+        .btn-animated::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .btn-animated:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .btn-animated:hover {
+            background: #2779bd; /* Updated button hover background color */
+            transform: rotateX(10deg) rotateY(10deg);
+        }
+
+        .btn-animated span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Black and White Color Scheme */
+        body {
+            background-color: #ffffff; /* Updated body background color */
+            color: #000000; /* Updated text color */
+        }
+
+        .bg-primary {
+            background-color: #ffffff; /* Updated primary background color */
+        }
+
+        .bg-secondary {
+            background-color: #f8f9fa; /* Updated secondary background color */
+        }
+
+        .bg-tertiary {
+            background-color: #e9ecef; /* Updated tertiary background color */
+        }
+
+        .bg-accent {
+            background-color: #007bff; /* Updated accent color */
+        }
+
+        .text-primary {
+            color: #000000; /* Updated text color */
+        }
+
+        .text-secondary {
+            color: #333333; /* Updated secondary text color */
+        }
+
+        .text-accent {
+            color: #007bff; /* Updated accent text color */
+        }
+
+        .border-primary {
+            border-color: #000000; /* Updated border color */
+        }
+
+        .border-secondary {
+            border-color: #f8f9fa; /* Updated border color */
+        }
+
+        .border-tertiary {
+            border-color: #e9ecef; /* Updated border color */
+        }
+
+        .section-spacing {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .section-spacing-large {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .section-spacing-medium {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #007bff; /* Updated icon color */
+            transition: color 0.3s ease;
+            font-size: 2rem;
+        }
+
+        .contact-info a:hover {
+            color: #0056b3; /* Updated hover icon color */
+        }
+
+        .box {
+            border-radius: 8px; /* Added rounded corners to the boxes */
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-primary text-primary font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-secondary p-4">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <h1 class="text-3xl font-extrabold text-primary">Prajvin Erugu</h1>
+            <ul class="nav-list flex space-x-6 mt-4 md:mt-0">
+                <li><a href="#about" class="hover:text-accent transition duration-300"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#skills" class="hover:text-accent transition duration-300"><i class="fas fa-cogs"></i> Skills</a></li>
+                <li><a href="#education" class="hover:text-accent transition duration-300"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#projects" class="hover:text-accent transition duration-300"><i class="fas fa-briefcase"></i> Projects</a></li>
+                <li><a href="#certificates" class="hover:text-accent transition duration-300"><i class="fas fa-certificate"></i> Certificates</a></li>
+                <li><a href="#contact" class="hover:text-accent transition duration-300"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section-spacing-large bg-secondary">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-8 text-accent">About Me</h2>
+            <div class="flex justify-center mb-8">
+                <img src="image/WhatsApp Image 2024-08-19 at 23.45.34_6f4073b6.jpg" alt="Prajvin Erugu" class="rounded-full w-40 h-40">
+            </div>
+            <p class="text-xl mb-8 text-secondary">I am Prajvin Erugu, a dedicated cybersecurity student specializing in safeguarding digital environments. My expertise spans across ethical hacking, vulnerability assessment, and incident response, with a strong focus on practical and theoretical aspects of cybersecurity. My hands-on experience includes penetration testing, threat modeling, and the deployment of advanced security measures.</p>
+            <p class="text-xl text-secondary">Passionate about staying abreast of the latest cybersecurity trends and innovations, I am committed to ongoing learning and applying cutting-edge techniques to address emerging threats.</p>
+        </div>
+    </section>
+
+<!-- Skills Section -->
+<section id="skills" class="section-spacing-medium bg-secondary section-reveal">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-8 text-accent">Technical Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Skill 1 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow hover-glow box text-center">
+                <i class="fas fa-shield-alt fa-3x mb-4 text-accent"></i>
+                <h3 class="text-2xl font-bold mb-4 text-accent">Ethical Hacking</h3>
+                <div class="details">
+                    <p class="text-lg text-secondary">Proficient in using tools such as Metasploit, Burp Suite, and Nmap for penetration testing. Skilled in discovering and exploiting vulnerabilities to ensure robust security defenses.</p>
+                </div>
+            </div>
+            <!-- Skill 2 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow hover-glow box text-center">
+                <i class="fas fa-detective fa-3x mb-4 text-accent"></i>
+                <h3 class="text-2xl font-bold mb-4 text-accent">Threat Detection</h3>
+                <div class="details">
+                    <p class="text-lg text-secondary">Expertise in configuring and analyzing SIEM systems like Splunk and ELK Stack to identify and mitigate security threats in real-time.</p>
+                </div>
+            </div>
+            <!-- Skill 3 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow hover-glow box text-center">
+                <i class="fas fa-helmet-safety fa-3x mb-4 text-accent"></i>
+                <h3 class="text-2xl font-bold mb-4 text-accent">Incident Response</h3>
+                <div class="details">
+                    <p class="text-lg text-secondary">Experience in conducting forensic analysis and coordinating response efforts to mitigate the impact of security incidents.</p>
+                </div>
+            </div>
+            <!-- Additional Skills ... -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Education Section -->
+<section id="education" class="section-spacing-medium bg-secondary section-reveal">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-8 text-accent">Education</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Bachelor of Technology -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg box text-left mx-auto w-full md:w-2/3">
+                <h3 class="text-2xl font-bold mb-2 text-accent">Bachelor of Technology</h3>
+                <div class="details">
+                    <p class="text-lg text-secondary">Hyderabad Institute of Technology and Management, Hyderabad</p>
+                    <p class="text-lg text-secondary">October 2022 - June 2025</p>
+                </div>
+            </div>
+            <!-- Diploma -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg box text-left mx-auto w-full md:w-2/3">
+                <h3 class="text-2xl font-bold mb-2 text-accent">Diploma</h3>
+                <div class="details">
+                    <p class="text-lg text-secondary">Government Institute of Electronics</p>
+                    <p class="text-lg text-secondary">July 2018 - June 2022</p>
+                </div>
+            </div>
+            <!-- SSC -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg box text-left mx-auto w-full md:w-2/3">
+                <h3 class="text-2xl font-bold mb-2 text-accent">SSC</h3>
+                <div class="details">
+                    <p class="text-lg text-secondary">Mother Theresa High School</p>
+                    <p class="text-lg text-secondary">2014 - 2018</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="section-spacing-medium bg-secondary">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-8 text-accent">My Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow hover-glow box text-center">
+                <!-- Custom icon/image -->
+                <img src="image/online-shop.png" alt="PharmaStore Management System Icon" class="w-24 h-24 mb-4 mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-accent">PharmaStore Management System</h3>
+                <p class="text-lg text-secondary">A comprehensive solution for pharmacy management that includes modules for inventory management, sales tracking, and customer relationship management. Utilizes robust data protection measures and secure transaction handling.</p>
+            </div>
+            <!-- Project 2 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow hover-glow box text-center">
+                <!-- Custom icon/image -->
+                <img src="image/phishing.png" alt="Detection of E-mail and SMS Phishing Icon" class="w-24 h-24 mb-4 mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-accent">Detection of E-mail and SMS Phishing</h3>
+                <p class="text-lg text-secondary">A Python-based tool for identifying phishing attempts in emails and SMS messages. Uses machine learning algorithms to detect and classify malicious content with high accuracy.</p>
+            </div>
+            <!-- Project 3 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow hover-glow box text-center">
+                <!-- Custom icon/image -->
+                <img src="image/smart-contracts.png" alt="AI-Based Smart Contract Assistant Icon" class="w-24 h-24 mb-4 mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-accent">AI-Based Smart Contract Assistant</h3>
+                <p class="text-lg text-secondary">An advanced AI-driven tool designed to assist with the creation, analysis, and management of smart contracts. Leverages machine learning to optimize contract clauses and ensure compliance with legal and operational standards.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Certificates Section -->
+<section id="certificates" class="section-spacing-medium bg-secondary">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-extrabold mb-8 text-accent">Certificates</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Certificate 1 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow box text-center">
+                <!-- Placeholder for custom icon/image -->
+                <img src="image/cyber-security (1).png" alt="Introduction to Cyber Security Icon" class="w-24 h-24 mb-4 mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-accent">Introduction to Cyber Security (Cisco)</h3>
+                <p class="text-lg text-secondary">A certification demonstrating foundational knowledge in cybersecurity principles, practices, and technologies, provided by Cisco.</p>
+            </div>
+            <!-- Certificate 2 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow box text-center">
+                <!-- Placeholder for custom icon/image -->
+                <img src="image/crime.png" alt="Ethical Hacking Icon" class="w-24 h-24 mb-4 mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-accent">Ethical Hacking (Cisco)</h3>
+                <p class="text-lg text-secondary">A certification showcasing advanced skills in ethical hacking, including penetration testing and vulnerability assessment, awarded by Cisco.</p>
+            </div>
+            <!-- Certificate 3 -->
+            <div class="bg-tertiary p-6 rounded-lg shadow-lg hover-grow box text-center">
+                <!-- Placeholder for custom icon/image -->
+                <img src="image/computer.png" alt="CCNA Networking Fundamentals Icon" class="w-24 h-24 mb-4 mx-auto">
+                <h3 class="text-2xl font-bold mb-4 text-accent">CCNA Networking Fundamentals</h3>
+                <p class="text-lg text-secondary">A certification indicating a strong understanding of networking fundamentals, including routing, switching, and network troubleshooting, provided by Simple learn.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-spacing-medium bg-secondary">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-8 text-accent">Contact Me</h2>
+            <p class="text-xl mb-6 text-secondary"> Reach out to me through the links below!</p>
+            <div class="contact-info mb-8">
+                <a href="https://www.linkedin.com/in/prajvin-erugu-7698ba296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-secondary hover:text-accent"><i class="fab fa-linkedin"></i></a>
+                <a href="tel:+9032819986" class="text-secondary hover:text-accent"><i class="fas fa-phone"></i></a>
+                <a href="https://wa.me/9032819986" target="_blank" class="text-secondary hover:text-accent"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:22a55a6201@hitam.org" class="text-secondary hover:text-accent"><i class="fas fa-envelope"></i></a>
+            </div>
+            <form action="#" method="POST" class="max-w-md mx-auto">
+                <div class="mb-4">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded bg-tertiary border border-primary text-primary">
+                </div>
+                <div class="mb-4">
+                    <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded bg-tertiary border border-primary text-primary">
+                </div>
+                <div class="mb-4">
+                    <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 rounded bg-tertiary border border-primary text-primary"></textarea>
+                </div>
+                <button type="submit" class="btn-animated hover-bounce">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary py-6 text-center">
+        <p class="text-secondary">© 2024 Prajvin Erugu. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
